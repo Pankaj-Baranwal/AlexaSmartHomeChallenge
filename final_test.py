@@ -9,7 +9,7 @@ import re
 import requests
 import json
 import csv
-from builtins import any as b_any
+from  __builtin__ import any as b_any
 import numpy as np
 
 
