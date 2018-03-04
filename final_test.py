@@ -9,8 +9,7 @@ import re
 import requests
 import json
 import csv
-import requests
-from  __builtin__ import any as b_any
+from builtins import any as b_any
 import numpy as np
 
 
@@ -117,7 +116,15 @@ if __name__ == '__main__' :
             if closest_superobject == -1:
                 print ("Couldn't figure the exact location of ", b[j][0])
             else:
-                print (b[j][0], " is on ", closest_superobject)            
+                print (b[j][0], " is on ", closest_superobject)
+                if b[j][0] == "cell phone":
+                    b[j][0] = "phone"
+                r = requests.post("https://www.lithics.in/apis/alexa/setObjectLocation.php", data={'location': closest_superobject, 'name': b[j][0]})
+                print(r.text)
+                if r.text == "SUCCESS!":
+                    print ("All good! Saved loaction in database")
+                else:
+                    print ("Something went wrong. Couldn't save into database")
 
         print ("Will search again for objects in 5 seconds")
         time.sleep(5)

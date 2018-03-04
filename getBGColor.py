@@ -10,7 +10,7 @@ if __name__ == '__main__' :
  
     # Exit if video not opened.
     if not video.isOpened():
-        print "Could not open video"
+        print ("Could not open video")
         sys.exit()
  
     # Read first frame.
