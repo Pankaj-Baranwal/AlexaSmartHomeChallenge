@@ -8,14 +8,14 @@ import time
 import re
 import requests
 import json
-import csv
 from  __builtin__ import any as b_any
 import numpy as np
 
 
-objects_superset = ["brown chair", "computer desk"]
-color_objects_superset = [[[112, 103,  17],  [95, 93, 75],  [115, 108,  14],  [140, 126,  23]], \
-[[35, 39, 31],  [48, 56, 46],  [53, 64, 57],  [42, 42, 35]]]
+objects_superset = ["yellow bench", "red chair", "computer desk"]
+color_objects_superset = [[[95, 168, 199], [95, 167, 201], [102, 164, 197], [90, 169, 209]], \
+[[52, 33, 133], [40, 36, 134], [41, 33, 139], [45, 37, 137]], \
+[[184, 200, 184], [177, 198, 186], [183, 200, 183], [185, 198, 184]]]
 objects_to_be_found = ["cell phone", "bottle"]
 
 def largest_indices(ary, n):
